@@ -1,14 +1,28 @@
-function positions(firstPlace, secondPlace, lastPlace){
-    if(firstPlace === "Daniel"){
-        return [firstPlace, secondPlace, lastPlace]
-    }else if(secondPlace === "Daniel"){
-        return [secondPlace, firstPlace, lastPlace]
+function positions(firstPlace, secondPlace, lastPlace) {
+    const arrayPositions = [firstPlace, secondPlace, lastPlace]
+
+    if (arrayPositions[0] === "Daniel") {
+        console.log("1º colocado: " + arrayPositions[0])
+        console.log("2º colocado: " + arrayPositions[1])
+        console.log("3º colocado: " + arrayPositions[2])
+    }else if(arrayPositions[1] === "Daniel"){
+        let x = arrayPositions[1]
+        arrayPositions[1] = arrayPositions[0]
+        arrayPositions[0] = x
+
+        console.log("1º colocado: " + arrayPositions[0])
+        console.log("2º colocado: " + arrayPositions[1])
+        console.log("3º colocado: " + arrayPositions[2])
     }else{
-        return [firstPlace, lastPlace, secondPlace]
+        let x = arrayPositions[2]
+        arrayPositions[2] = arrayPositions[1]
+        arrayPositions[1] = x
+
+        console.log("1º colocado: " + arrayPositions[0])
+        console.log("2º colocado: " + arrayPositions[1])
+        console.log("3º colocado: " + arrayPositions[2])
     }
+
 }
 
-let podio = positions("Manoel", "Daniel", "Rafael")
-console.log("1º colocado: " + podio[0])
-console.log("2º colocado: " + podio[1])
-console.log("3º colocado: " + podio[2])
+let podio = positions("Rafael", "Manoel", "Daniel")
